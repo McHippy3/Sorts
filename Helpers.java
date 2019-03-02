@@ -42,6 +42,34 @@ public class Helpers
         return container;
     }
 
+    //Generates an array from 0 to the passed length
+    public static int[] generateArray(int length)
+    {
+        int[] array = new int[length];
+
+        for(int i = 0; i < length; i++)
+        {
+            array[i] = i;
+        }
+
+        shuffle(array);
+
+        return array;
+    }
+
+    //Shuffles array
+    //Source: https://www.programcreek.com/2012/02/java-method-to-shuffle-an-int-array-with-random-order/
+    public static void shuffle(int[] array){
+		Random rgen = new Random();  // Random number generator			
+ 
+		for (int i = 0; i < array.length; i++) {
+		    int randomPosition = rgen.nextInt(array.length);
+		    int temp = array[i];
+		    array[i] = array[randomPosition];
+		    array[randomPosition] = temp;
+		}
+     }
+
     //Returns true if the array is sorted correctly
     public static boolean isSorted(int[] array)
     {

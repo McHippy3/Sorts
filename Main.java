@@ -52,7 +52,13 @@ public class Main extends Application
         generateButton1.setPrefWidth(175);
         generateButton1.setOnMouseClicked(
             (MouseEvent me) -> {
-                currentArray = generateArray(100);
+                currentArray = Helpers.generateArray(100);
+                //Updating 'Current: ' text which is at root[1]
+                Platform.runLater(
+                    () -> { 
+                        root.getChildren().remove(1);
+                        root.getChildren().add(1, Helpers.displayText("Current: Randomized array with length of " + currentArray.length, null, Color.PINK));
+                });
             }
         );
 
@@ -60,7 +66,13 @@ public class Main extends Application
         generateButton2.setPrefWidth(175);
         generateButton2.setOnMouseClicked(
             (MouseEvent me) -> {
-                currentArray = generateArray(100000);
+                currentArray = Helpers.generateArray(100000);
+                //Updating 'Current: ' text which is at root[1]
+                Platform.runLater(
+                    () -> { 
+                        root.getChildren().remove(1);
+                        root.getChildren().add(1, Helpers.displayText("Current: Randomized array with length of " + currentArray.length, null, Color.PINK));
+                });
             }
         );
 
@@ -68,7 +80,13 @@ public class Main extends Application
         generateButton3.setPrefWidth(175);
         generateButton3.setOnMouseClicked(
             (MouseEvent me) -> {
-                currentArray = generateArray(100000000);
+                currentArray = Helpers.generateArray(100000000);
+                //Updating 'Current: ' text which is at root[1]
+                Platform.runLater(
+                    () -> { 
+                        root.getChildren().remove(1);
+                        root.getChildren().add(1, Helpers.displayText("Current: Randomized array with length of " + currentArray.length, null, Color.PINK));
+                });
             }
         );
 
@@ -119,41 +137,6 @@ public class Main extends Application
 
         return arrayOptions;
     }
-
-    //Generates an array from 0 to the passed length
-    private int[] generateArray(int length)
-    {
-        int[] array = new int[length];
-
-        for(int i = 0; i < length; i++)
-        {
-            array[i] = i;
-        }
-
-        shuffle(array);
-
-        //Updating 'Current: ' text which is at root[1]
-        Platform.runLater(
-            () -> { 
-                root.getChildren().remove(1);
-                root.getChildren().add(1, Helpers.displayText("Current: Randomized array with length of " + currentArray.length, null, Color.PINK));
-        });
-
-        return array;
-    }
-
-    //Shuffles array
-    //Source: https://www.programcreek.com/2012/02/java-method-to-shuffle-an-int-array-with-random-order/
-    private void shuffle(int[] array){
-		Random rgen = new Random();  // Random number generator			
- 
-		for (int i = 0; i < array.length; i++) {
-		    int randomPosition = rgen.nextInt(array.length);
-		    int temp = array[i];
-		    array[i] = array[randomPosition];
-		    array[randomPosition] = temp;
-		}
-     }
     
     private void sort(String type, String efficiency)
     {
@@ -200,7 +183,7 @@ public class Main extends Application
                 }
 
                 //Re-randomize array
-                shuffle(currentArray);
+                Helpers.shuffle(currentArray);
             }
             );
     }
