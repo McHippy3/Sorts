@@ -1,6 +1,5 @@
 class SelectionSort implements Sort
 {
-    //Source: https://www.geeksforgeeks.org/selection-sort/
     public void sort(int[] array)
     {
         int n = array.length; 
