@@ -48,11 +48,11 @@ public class Main extends Application
         HBox arrayOptions = new HBox(20);
         arrayOptions.setAlignment(Pos.CENTER);
 
-        Button generateButton1 = new Button("Generate Array [100]");
+        Button generateButton1 = new Button("Generate Array [1000]");
         generateButton1.setPrefWidth(175);
         generateButton1.setOnMouseClicked(
             (MouseEvent me) -> {
-                currentArray = Helpers.generateArray(100);
+                currentArray = Helpers.generateArray(1000);
                 //Updating 'Current: ' text which is at root[1]
                 Platform.runLater(
                     () -> { 
@@ -66,7 +66,7 @@ public class Main extends Application
         generateButton2.setPrefWidth(175);
         generateButton2.setOnMouseClicked(
             (MouseEvent me) -> {
-                currentArray = Helpers.generateArray(100000);
+                currentArray = Helpers.generateArray(10000);
                 //Updating 'Current: ' text which is at root[1]
                 Platform.runLater(
                     () -> { 
@@ -76,11 +76,11 @@ public class Main extends Application
             }
         );
 
-        Button generateButton3 = new Button("Generate Array [1,000,000]");
+        Button generateButton3 = new Button("Generate Array [100,000]");
         generateButton3.setPrefWidth(175);
         generateButton3.setOnMouseClicked(
             (MouseEvent me) -> {
-                currentArray = Helpers.generateArray(100000000);
+                currentArray = Helpers.generateArray(100000);
                 //Updating 'Current: ' text which is at root[1]
                 Platform.runLater(
                     () -> { 
