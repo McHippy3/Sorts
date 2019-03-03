@@ -42,7 +42,7 @@ public class Main extends Application
         root.getChildren().add(getSortButtons());
     }
 
-    //Options for generating arrays from 100 to 1,000,000
+    //Options for generating arrays from 1000 to 100,000
     private HBox getGenerateButtons()
     {
         HBox arrayOptions = new HBox(20);
